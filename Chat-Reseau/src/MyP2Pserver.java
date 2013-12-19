@@ -13,6 +13,7 @@ public class MyP2Pserver extends Application {
 	byte[] data = new byte[29];
 	simulip.net.DatagramSocket d;
 	simulip.net.DatagramPacket p;
+	
 
 	/* function to register users into the database */
     private void write_mode(){
