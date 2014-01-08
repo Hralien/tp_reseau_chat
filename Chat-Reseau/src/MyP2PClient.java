@@ -12,9 +12,9 @@ public class MyP2PClient extends Application{
 	simulip.net.DatagramSocket d;
 	simulip.net.DatagramPacket p;
 	public void run(){
-		userName = system.in.read();
+		userName = system.in.read("pseudo");
 		do{
-			portUDP = Integer.parseInt(system.in.read());
+			portUDP = Integer.parseInt(system.in.read("port"));
 		}while(portUDP>65535);
 		//tableau d'octet à envoyer
 		byte[] tab = new byte[1+2+1+userName.length()];
@@ -44,6 +44,7 @@ public class MyP2PClient extends Application{
 		d.send(p);
 		
 	}
+	
 	public static byte[] intToByteArray(int a)
 	{
 	    byte[] ret = new byte[2];
